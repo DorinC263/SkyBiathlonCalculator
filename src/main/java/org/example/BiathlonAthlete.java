@@ -1,6 +1,4 @@
 package org.example;
-
-
 public class BiathlonAthlete implements Comparable<BiathlonAthlete> {
     private int athleteNumber;
     private String athleteName;
@@ -19,7 +17,6 @@ public class BiathlonAthlete implements Comparable<BiathlonAthlete> {
         this.secondShooting = secondShooting;
         this.thirdShooting = thirdShooting;
     }
-
     public String getAthleteName() {
         return this.athleteName;
     }
@@ -27,13 +24,11 @@ public class BiathlonAthlete implements Comparable<BiathlonAthlete> {
     private ShotResult calculateShotResult(char shot) {
         return shot == 'x' ? ShotResult.HIT : ShotResult.MISS;
     }
-
     public int getTotalPenalty() {
         return this.countPenalty(this.firstShooting) +
                 this.countPenalty(this.secondShooting) +
                 this.countPenalty(this.thirdShooting);
     }
-
     private int countPenalty(String shootingResult) {
         int penalty = 0;
         for (char c : shootingResult.toCharArray()) {
